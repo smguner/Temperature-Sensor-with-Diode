@@ -1,0 +1,27 @@
+D1 N002 0 1N4148 temp={23}
+D2 N007 0 1N4148 temp={23}
+R1 v+ N007 20K
+R2 N001 N002 1k
+R3 v+ N002 20k
+R4 N008 N007 1k
+XU1 N009 N003 v+ 0 N005 LM358
+D3 N006 0 LXK2-PW14
+R6 N006 N005 100
+R7 N005 N009 100k
+V3 v+ 0 10
+R5 N004 N001 450k
+XU2 N008 N001 v+ 0 N004 LM358
+R8 N011 v+ 40
+R9 N008 N010 500k
+R10 N009 N004 1k
+R11 0 N011 160
+R12 N011 N003 1k
+R13 v+ N010 100
+R14 0 v+ 100
+.model D D
+.lib /Users/simgeuner/Library/Application Support/LTspice/lib/cmp/standard.dio
+.step param t1 18 27 1
+.lib LM358.ti.lib
+.tran 5m
+.backanno
+.end
